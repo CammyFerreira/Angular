@@ -1,0 +1,18 @@
+<h3>Selecione o tipo de contato: </h3>
+<select [(ngModel)]="contato">
+  <option value="whatsapp">whatsapp</option>
+  <option value="email">email</option>
+</select>
+
+<br><br>
+
+<div *ngIf="contato == 'whatsapp'">
+  <label for="Whatsapp">Whatsapp:</label>
+  <input type="tel">
+</div>
+
+
+<div *ngIf="contato == 'email'">
+  <label for="email">Email:</label>
+  <input type="email">
+</div>
