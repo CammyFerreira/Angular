@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ex05Component implements OnInit {
 
-  paises = ['Brasil', 'Canadá', 'Irlanda', 'México']
+  paises = ['Brasil', 'Canadá', 'Irlanda', 'México'];
 
   constructor() { }
 

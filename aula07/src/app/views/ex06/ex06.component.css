@@ -1,0 +1,11 @@
+.cartao{
+  border: 1px solid rgba(211, 211, 211, 0.164);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+h2, p {
+  margin: 0;
+}

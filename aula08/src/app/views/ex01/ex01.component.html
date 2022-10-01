@@ -1,0 +1,8 @@
+<input [(ngModel)]="nome">
+
+<ul [ngSwitch]="nome">
+  <li *ngSwitchCase="'Me poupe'"><a href="https://www.youtube.com/c/Mepoupenaweb">Me poupe</a></li>
+  <li *ngSwitchCase="'Prof Mira'"><a href="https://www.youtube.com/c/ProfessorMira">Prof Mira</a></li>
+  <li *ngSwitchCase="'primo rico'"><a href="https://www.youtube.com/c/ThiagoNigro">Primo rico</a></li>
+  <li *ngSwitchDefault><a href="https://www.youtube.com">Youtube</a></li>
+</ul>
