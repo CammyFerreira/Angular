@@ -1,0 +1,84 @@
+<p>Exemplo de binding de duas vias</p>
+
+<h4>Exemplo 1</h4>
+
+<input type="text" [(ngModel)]="nome">
+
+<br>
+
+{{nome}}
+
+<br>
+
+<button (click)="limparNome()">Limpar</button>
+
+<hr>
+
+<h4>Exemplo 2</h4>
+
+<input type="number" [(ngModel)]="valor1">
+<input type="number" [(ngModel)]="valor2">
+
+{{valor1 + valor2}}
+
+<hr>
+
+<h4>Exemplo 3</h4>
+
+<input type="text" [(ngModel)]="nome">
+<input type="text" [(ngModel)]="sobrenome">
+
+{{obterNomeCompleto()}}
+
+<br>
+
+<hr>
+
+<h3>Exemplo 04</h3>
+
+<input type="color" [(ngModel)]="color">
+{{color}}
+
+<div style="height: 100px; background-color: {{color}}">
+
+</div>
+
+<hr>
+
+<h3>Exemplo 05</h3>
+
+<select [(ngModel)]="imagem">
+  <option value="terror">Terror</option>
+  <option value="drama">Drama</option>
+  <option value="scifi">Ficção Científica</option>
+</select>
+<br>
+
+<img src="assets/{{imagem}}.jpeg">
+
+<hr>
+
+<h3>Exemplo 06</h3>
+
+<label for="contatoTelefone">Contato por telefone</label>
+<input type="checkbox" [(ngModel)]="contatoTelefone" id="contatoTelefone">
+
+<label for="contatoEmail">Contato por email</label>
+<input type="checkbox" [(ngModel)]="contatoEmail" id="contatoEmail">
+
+
+<hr>
+
+<h3>Exemplo 07</h3>
+
+<input type="radio" value= 'mago' [(ngModel)]="classeHeroi" id="mago">
+<label for="mago">mago</label>
+
+<input type="radio" value='guerreiro' [(ngModel)]="classeHeroi" id="guerreiro">
+<label for="guerreiro">guerreiro</label>
+
+<input type="radio" value='arqueiro' [(ngModel)]="classeHeroi" id="arqueiro">
+<label for="arqueiro">arqueiro</label>
+
+Classe escolhida: {{ classeHeroi }}
+
