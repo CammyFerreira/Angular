@@ -1,0 +1,9 @@
+<h3>Timezone</h3>
+
+<input type="text" placeholder="timezone" [(ngModel)]="timezone">
+
+<button (click)="consultarHora()">Consultar</button>
+
+<div *ngIf="datatime">
+  <p>{{datatime.datetime}}</p>
+</div>
