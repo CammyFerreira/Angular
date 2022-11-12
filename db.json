@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "title": "God of war",
+      "author": "Kratos",
+      "id": 2
+    },
+    {
+      "title": "Asistindo The crown",
+      "author": "camis",
+      "id": 3
+    }
+  ],
+  "jogos": [
+    {
+      "id": 1,
+      "nome": "God of war",
+      "plataforma": "PS4/PS5"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "camis",
+      "cpf": "12345678912"
+    },
+    {
+      "nome": "robs",
+      "cpf": "98765432132",
+      "id": 2
+    }
+  ]
+}
