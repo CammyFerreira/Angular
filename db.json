@@ -25,13 +25,18 @@
   "clientes": [
     {
       "id": 1,
-      "nome": "camis",
+      "nome": "cami",
       "cpf": "12345678912"
     },
     {
-      "nome": "robs",
-      "cpf": "98765432132",
+      "nome": "jett",
+      "cpf": "2222222222",
       "id": 2
+    },
+    {
+      "nome": "camis",
+      "cpf": "111111111",
+      "id": 3
     }
   ]
 }

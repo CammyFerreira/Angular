@@ -9,8 +9,9 @@ import { ClienteService } from 'src/app/service/cliente.service';
 })
 export class ClienteComponent implements OnInit {
 
-  clientes: Cliente[] = [];
-  clienteInsercao?: Cliente;
+  listaClientes: Cliente[] = [];
+  cliente?: Cliente;
+  estaEditando = false;
 
   constructor(private clientService: ClienteService) { }
 
@@ -20,24 +21,57 @@ export class ClienteComponent implements OnInit {
 
   listar(){
     this.clientService.listar().subscribe(clientes => {
-      this.clientes = clientes;
+      this.listaClientes = clientes;
     });
   }
 
   novo(){
-    this.clienteInsercao = new Cliente();
+    this.cliente = new Cliente();
+    this.estaEditando = false;
   }
 
   cancelar(){
-    this.clienteInsercao = undefined;
+    this.cliente = undefined;
   }
 
   salvar(){
-    if(!this.clienteInsercao){
+    if(!this.cliente){
       return;
     }
-    this.clientService.inserir(this.clienteInsercao).subscribe(cliente => {
+
+    if(!this.estaEditando){
+      this.clientService.inserir(this.cliente).subscribe(cliente => {
       this.listar();
+      this.cancelar();
+      });
+
+    }else{
+      this.clientService.atualizar(this.cliente).subscribe(cliente => {
+        this.listar();
+        this.cancelar();
     });
+  }
+}
+
+  deletar(id?: number){
+    if(!id){
+      return;
+    }
+
+    const resposta = confirm("Esse cliente será excluído. OK?")
+
+    if(resposta){
+      this.clientService.deletar(id).subscribe(() => {
+        this.listar();
+        this.cancelar();
+      });
+    }else{
+      this.cliente = undefined;
+    }
+  }
+
+  selecionar(cliente: Cliente){
+    this.cliente = cliente;
+    this.estaEditando = true;
   }
 }
