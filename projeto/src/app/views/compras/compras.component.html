@@ -1,0 +1,39 @@
+<div class="row">
+    <h2>Gerenciar Compras</h2>
+    <button mat-mini-fab color="primary" (click)="novo()"><mat-icon>add</mat-icon></button>
+</div>
+
+<div *ngIf="compra">
+    <br>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" [(ngModel)]="compra.nome">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>categoria</mat-label>
+        <input matInput type="text" [(ngModel)]="compra.categoria">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Valor</mat-label>
+        <input matInput type="text" [(ngModel)]="compra.valor">
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="accent" (click)="cancelar()">Cancelar</button>
+    <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+    <br><br>
+</div>
+
+
+
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let compra of listaCompras">
+        <div class="list-item">
+            <span (click)="selecionar(compra)">{{compra.nome}} - {{compra.categoria}} - R${{compra.valor}}</span>
+            <button mat-icon-button (click)="excluir(compra.id)" color="accent"><mat-icon>delete</mat-icon></button>
+        </div>
+    </mat-list-option>
+</mat-selection-list>
+
+<br>

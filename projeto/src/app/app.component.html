@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button><mat-icon>menu</mat-icon></button>
+        <h1>Gestor de Compras</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav [opened]="true" style="width: 300px;">
+        <mat-list>
+            <a mat-list-item routerLink="/compras">Compras</a>
+            <a mat-list-item routerLink="/salario">Salario</a>
+        </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="min-height: calc(100vh - 64px);">
+        <mat-card class="mat-elevation-z2 cartao">
+            <router-outlet></router-outlet>
+        </mat-card>
+    </mat-sidenav-content>
+    
+
+</mat-sidenav-container>
