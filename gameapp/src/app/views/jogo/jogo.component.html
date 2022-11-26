@@ -1,0 +1,30 @@
+<h2>Gestor de Jogos</h2>        
+
+<ul>
+    <li *ngFor="let jogo of jogos" (click)="selecionarJogo(jogo)">
+        {{jogo.nome}} ({{jogo.plataforma}})
+    </li>
+</ul>
+
+<div *ngIf="jogoSelecionado">
+    <input type="text" [(ngModel)] ="jogoSelecionado.nome">
+
+    <br>
+
+    <select [(ngModel)]="jogoSelecionado.status">
+        <option value="na" label="não informado"></option>
+        <option value="q" label="quero"></option>
+        <option value="t" label="tenho"></option>
+        <option value="j" label="jogando"></option>
+        <option value="z" label="zerado"></option>
+    </select>
+
+    <br>
+
+    <input type="text" [(ngModel)] ="jogoSelecionado.plataforma">
+
+    <br> 
+
+    <input type="text" [(ngModel)] ="jogoSelecionado.genero">
+
+</div>
