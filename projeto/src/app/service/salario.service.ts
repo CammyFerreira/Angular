@@ -10,8 +10,8 @@ export class SalarioService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Salario[]> {
-    return this.http.get<Salario[]>("http://localhost:3000/salario");
+  detalhar(): Observable<Salario> {
+    return this.http.get<Salario>("http://localhost:3000/salario");
   }
 
   inserir(salario: Salario): Observable<Salario> {

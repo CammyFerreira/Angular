@@ -9,7 +9,6 @@ import { SalarioService } from 'src/app/service/salario.service';
 })
 export class SalarioComponent implements OnInit {
 
-  listaSalario: Salario[] = [];
   salario?: Salario;
   estaEditando = false;
 
@@ -21,14 +20,9 @@ export class SalarioComponent implements OnInit {
   }
 
   listar() {
-    this.salarioService.listar().subscribe(salarios => {
-      this.listaSalario = salarios;
+    this.salarioService.detalhar().subscribe(salario => {
+      this.salario = salario;
     });
-  }
-
-
-  cancelar() {
-    this.salario = undefined;
   }
 
   salvar() {
@@ -37,18 +31,16 @@ export class SalarioComponent implements OnInit {
     if (!this.estaEditando) {
         this.salarioService.inserir(this.salario).subscribe(() => {
           this.listar();
-          this.cancelar();
         });
 
     } else {
         this.salarioService.atualizar(this.salario).subscribe(() => {
           this.listar();
-          this.cancelar();
         });
     }
   }
 
-  selecionar(salario: Salario) {
+  selecionar(salario?: Salario) {
       this.salario = salario;
       this.estaEditando = true;
   }

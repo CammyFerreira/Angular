@@ -9,19 +9,7 @@
         <input matInput type="number" [(ngModel)]="salario.valor">
     </mat-form-field>
     <br>
-    <button mat-flat-button color="accent" (click)="cancelar()">Cancelar</button>
     <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
     <br><br>
 </div>
-
-
-
-<mat-selection-list [multiple]="false">
-    <mat-list-option *ngFor="let salario of listaSalario">
-        <div class="list-item">
-            <span (click)="selecionar(salario)">{{salario.valor}}</span>
-        </div>
-    </mat-list-option>
-</mat-selection-list>
-
-<br>
+ 

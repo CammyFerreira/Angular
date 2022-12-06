@@ -29,20 +29,16 @@
     <br><br>
 </div>
 
-
-
 <mat-selection-list [multiple]="false">
     <mat-list-option *ngFor="let compra of listaCompras">
         <div class="list-item">
-            <span (click)="selecionar(compra)">{{compra.nome}} - {{compra.categoria}} - R${{compra.valor}}</span>
+            <span (click)="selecionar(compra)">{{compra.nome}} - {{compra.categoria}} - {{converter(compra.valor)}}</span>
             <button mat-icon-button (click)="excluir(compra.id)" color="accent"><mat-icon>delete</mat-icon></button>
         </div>
     </mat-list-option>
 </mat-selection-list>
 
 
-<div id="total">Total: {{somar()}}</div>
-<div id="restante">Restante: {{restante()}}</div>
+<div id="total">Total: {{converter(somar())}}</div>
+<div id="total">Restante: {{converter(restante())}}</div>
 
-
-<br>
