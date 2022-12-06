@@ -11,7 +11,7 @@ export class ComprasComponent implements OnInit {
   listaCompras: Compras[] = [];
   compra?: Compras;
   estaEditando = false;
-  valorTotal = 0;
+  soma = 0;
 
   constructor(private comprasService: ComprasService) { }
 
@@ -65,4 +65,9 @@ export class ComprasComponent implements OnInit {
       this.estaEditando = true;
   }
 
+  somar(){
+    this.listaCompras.forEach(compra => {
+      console.log(this.soma += compra.valor);
+    });  
+  }
 }

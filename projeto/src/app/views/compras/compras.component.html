@@ -3,6 +3,10 @@
     <button mat-mini-fab color="primary" (click)="novo()"><mat-icon>add</mat-icon></button>
 </div>
 
+<div>
+    <h5>Nome - Categoria - Valor</h5>
+</div>
+
 <div *ngIf="compra">
     <br>
     <mat-form-field appearance="fill" style="width: 100%;">
@@ -17,7 +21,7 @@
     <br>
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Valor</mat-label>
-        <input matInput type="text" [(ngModel)]="compra.valor">
+        <input matInput type="number" [(ngModel)]="compra.valor">
     </mat-form-field>
     <br>
     <button mat-flat-button color="accent" (click)="cancelar()">Cancelar</button>
@@ -35,5 +39,7 @@
         </div>
     </mat-list-option>
 </mat-selection-list>
+
+<div>{{somar()}}</div>
 
 <br>
