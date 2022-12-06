@@ -1,17 +1,17 @@
 <div class="row">
-    <h2>Gerenciar Compras</h2>
+    <h2 class="titulo">Lista de Compras</h2>
     <button mat-mini-fab color="primary" (click)="novo()"><mat-icon>add</mat-icon></button>
 </div>
 
 <div>
-    <h5>Nome - Categoria - Valor</h5>
+    <h5 id="campos">Nome - Categoria - Valor</h5>
 </div>
 
 <div *ngIf="compra">
     <br>
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Nome</mat-label>
-        <input matInput type="text" [(ngModel)]="compra.nome">
+        <input matInput type="text" [(ngModel)]="compra.nome" required>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill" style="width: 100%;">
@@ -21,7 +21,7 @@
     <br>
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Valor</mat-label>
-        <input matInput type="number" [(ngModel)]="compra.valor">
+        <input matInput type="number" [(ngModel)]="compra.valor" min="0" max="5000">
     </mat-form-field>
     <br>
     <button mat-flat-button color="accent" (click)="cancelar()">Cancelar</button>
@@ -40,6 +40,9 @@
     </mat-list-option>
 </mat-selection-list>
 
-<div>{{somar()}}</div>
+
+<div id="total">Total: {{somar()}}</div>
+<div id="restante">Restante: {{restante()}}</div>
+
 
 <br>

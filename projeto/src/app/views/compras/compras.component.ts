@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Compras } from 'src/app/model/compras';
+import { ComprasCompletas } from 'src/app/model/comprasCompletas';
+import { Salario } from 'src/app/model/salario';
 import { ComprasService } from 'src/app/service/compras.service';
+import { SalarioService } from 'src/app/service/salario.service';
 
 @Component({
   selector: 'app-compras',
@@ -11,9 +14,8 @@ export class ComprasComponent implements OnInit {
   listaCompras: Compras[] = [];
   compra?: Compras;
   estaEditando = false;
-  soma = 0;
 
-  constructor(private comprasService: ComprasService) { }
+  constructor(private comprasService: ComprasService, private salarioService: SalarioService) { }
 
   ngOnInit(): void {
     this.listar();
@@ -24,6 +26,7 @@ export class ComprasComponent implements OnInit {
       this.listaCompras = compras;
     });
   }
+
 
   novo() {
     this.compra = new Compras();
@@ -65,9 +68,12 @@ export class ComprasComponent implements OnInit {
       this.estaEditando = true;
   }
 
-  somar(){
+  somar(): number{
+    let soma = 0;
     this.listaCompras.forEach(compra => {
-      console.log(this.soma += compra.valor);
-    });  
+      soma += compra.valor;
+    });
+    return soma;  
   }
+
 }
