@@ -15,11 +15,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SalarioComponent } from './views/salario/salario.component';
+import { SobreComponent } from './views/sobre/sobre.component';
 @NgModule({
   declarations: [
     AppComponent,
     ComprasComponent,
-    SalarioComponent
+    SalarioComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
